@@ -9,13 +9,13 @@ logic:
   case 1 will be Monday and so on.
   the fact that days repeat make it simple!
   after 7 days the 8th day will be again Monday,
-  whose index(in switch-case) is same as 8%7.
-  so so in general we can say index is nothing but
-  "(number days till the given date)%7"
+  whose index(in switch-case) is same as (8%7)-1.
+  so in general we can say index is nothing but
+  "(number days till the given date)%7)-1"
   
 process:
   1)find the number of days till the given date
-  2)find days%7 which is nothing but index
+  2)find (days%7)-1 which is nothing but index
   3)print day
 
 Happy Reading! ;) */
@@ -26,13 +26,14 @@ Happy Reading! ;) */
  int day,month,year;
  
  int calculate();
+ void total_to_day(int);
  
 int main()
 {
     clrscr();
     char k,l;//redundant; used to store "/" between date.
     int br[12]={31,28,31,30,31,30,31,31,30,31,30,31};
-    //to check validity of give date, we need this "br".
+    //to check validity of given date, we need this "br".
     printf("enter any date in the format \"dd/mm/yyyy\"\n");
     scanf("%2d%c%2d%c%4d",&day,&k,&month,&l,&year);
     //assignment to variables
