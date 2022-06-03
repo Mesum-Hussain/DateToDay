@@ -9,13 +9,13 @@ logic:
   case 1 will be Monday and so on.
   the fact that days repeat make it simple!
   after 7 days the 8th day will be again Monday,
-  whose index(in switch-case) is same as (8%7)-1.
+  whose index(in switch-case) is same as 8%7.
   so in general we can say index is nothing but
-  "(number days till the given date)%7)-1"
+  "(number days till the given date)%7"
   
 process:
   1)find the number of days till the given date
-  2)find (days%7)-1 which is nothing but index
+  2)find days%7 which is nothing but index
   3)print day
 
 Happy Reading! ;) */
@@ -38,7 +38,7 @@ int main()
     scanf("%2d%c%2d%c%4d",&day,&k,&month,&l,&year);
     //assignment to variables
     if(year%4==0&&(year%100!=0||year%400==0))
-    br[1]+=1;//if(leap year)Feb_days=29.;
+    br[1]+=1;//if(leap year)Feb_days=29.
     
     if(day<1||month<1||month>12|| year<1||day>br[month-1])
     printf("invalid date");
