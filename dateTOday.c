@@ -10,7 +10,7 @@ logic:
   the fact that days repeat make it simple!
   after 7 days the 8th day will be again Monday,
   whose index(in switch-case) is same as 8%7.
-  so so in general we can say index is nothing but
+  so in general we can say index is nothing but
   "(number days till the given date)%7"
   
 process:
@@ -26,18 +26,19 @@ Happy Reading! ;) */
  int day,month,year;
  
  int calculate();
+ void total_to_day(int);
  
 int main()
 {
     clrscr();
     char k,l;//redundant; used to store "/" between date.
     int br[12]={31,28,31,30,31,30,31,31,30,31,30,31};
-    //to check validity of give date, we need this "br".
+    //to check validity of given date, we need this "br".
     printf("enter any date in the format \"dd/mm/yyyy\"\n");
     scanf("%2d%c%2d%c%4d",&day,&k,&month,&l,&year);
     //assignment to variables
     if(year%4==0&&(year%100!=0||year%400==0))
-    br[1]+=1;//if(leap year)Feb_days=29.;
+    br[1]+=1;//if(leap year)Feb_days=29.
     
     if(day<1||month<1||month>12|| year<1||day>br[month-1])
     printf("invalid date");
